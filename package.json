@@ -18,7 +18,6 @@
   "homepage": "https://github.com/Malnati/mal-poc-njs-chartjs#readme",
   "dependencies": {
     "chart.js": "^2.9.3",
-    "express": "^4.17.1",
-    "patternomaly": "^1.3.2"
+    "express": "^4.17.1"
   }
 }
