@@ -4,7 +4,6 @@
     <head>
         <title>Doughnut Chart</title>
         <script src="public/Chart.min.js"></script>
-        <script src="public/utils.js"></script>
         <style>
         canvas {
             -moz-user-select: none;
@@ -17,6 +16,7 @@
         <canvas id="myDoughnutChart" width="400" height="400"></canvas>
         <canvas id="myPizzaChart" width="400" height="400"></canvas>
         <script>
+
             const data = {
             datasets: [{
                     data: [10, 20, 30, 20],
@@ -34,6 +34,7 @@
                     'Yellow'
                 ]
             };
+
             var doughnutCtx = document.getElementById('myDoughnutChart');
             const myDoughnutChart = new Chart(doughnutCtx, {
                 type: 'doughnut',
