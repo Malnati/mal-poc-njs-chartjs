@@ -1,5 +1,27 @@
-<script src="path/to/chartjs/dist/Chart.js"></script>
-<script>
-    var myChart = new Chart(ctx, {...});
-</script>
-<link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css">
+<html>
+    <head>
+        <script src="chartjs/Chart.js"></script>
+        <link rel="stylesheet" type="text/css" href="chartjs/Chart.css">
+    </head>
+    <body>
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <script>
+            const data = {
+            datasets: [{
+                    data: [10, 20, 30]
+                }],
+            labels: [
+                    'Red',
+                    'Yellow',
+                    'Blue'
+                ]
+            };
+            var ctx = document.getElementById('myChart');
+            const myDoughnutChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: data
+                // , options: options
+            });
+        </script>
+    </body>
+</html>
