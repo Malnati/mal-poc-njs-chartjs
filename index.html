@@ -14,11 +14,18 @@
         </style>
     </head>
     <body>
-        <canvas id="myChart" width="400" height="400"></canvas>
+        <canvas id="myDoughnutChart" width="400" height="400"></canvas>
+        <canvas id="myPizzaChart" width="400" height="400"></canvas>
         <script>
             const data = {
             datasets: [{
-                    data: [10, 20, 30]
+                    data: [10, 20, 30],
+                    backgroundColor: [
+                        '#ff6384',
+                        '#36a2eb',
+                        '#cc65fe',
+                        '#ffce56'
+                    ]
                 }],
             labels: [
                     'Red',
@@ -26,9 +33,29 @@
                     'Blue'
                 ]
             };
-            var ctx = document.getElementById('myChart');
-            const myDoughnutChart = new Chart(ctx, {
+            var doughnutCtx = document.getElementById('myDoughnutChart');
+            const myDoughnutChart = new Chart(doughnutCtx, {
                 type: 'doughnut',
+                data: data,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Chart.js Doughnut Chart'
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            });
+
+            var pizzaCtx = document.getElementById('myPizzaChart');
+            const myPizzaChart = new Chart(pizzaCtx, {
+                type: 'pie',
                 data: data
                 // , options: options
             });
